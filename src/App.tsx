@@ -13,13 +13,10 @@ import Dashboard from './components/dashboard/Dashboard'
 import LeadKanban from './components/leads/LeadKanban'
 import VisitCalendar from './components/calendar/VisitCalendar'
 import EnrollmentManager from './components/enrollments/EnrollmentManager'
-import MarketingCPA from './components/marketing/MarketingCPA'
-import ReEnrollments from './components/reenrollments/ReEnrollments'
-import FunnelAnalysis from './components/funnel/FunnelAnalysis'
-import ActionsManager from './components/actions/ActionsManager'
-import Reports from './components/reports/Reports'
+import GestorReports from './components/reports/GestorReports'
+import WhatsAppHub from './components/whatsapp/WhatsAppHub'
 import UserManagement from './components/management/UserManagement'
-import SystemSettings from './components/management/SystemSettings'
+import Settings from './components/settings/Settings'
 import UserProfile from './components/management/UserProfile'
 
 // Layout Components
@@ -202,34 +199,11 @@ function AppContent() {
             <Route path="/leads" element={<LeadKanban />} />
             <Route path="/visits" element={<VisitCalendar />} />
             <Route path="/enrollments" element={<EnrollmentManager />} />
-            
-            <Route path="/marketing" element={
-              <ProtectedRoute allowedRoles={['manager', 'admin']}>
-                <MarketingCPA />
-              </ProtectedRoute>
-            } />
-            
-            <Route path="/reenrollments" element={
-              <ProtectedRoute allowedRoles={['manager', 'admin']}>
-                <ReEnrollments />
-              </ProtectedRoute>
-            } />
-            
-            <Route path="/funnel" element={
-              <ProtectedRoute allowedRoles={['manager', 'admin']}>
-                <FunnelAnalysis />
-              </ProtectedRoute>
-            } />
-            
-            <Route path="/actions" element={
-              <ProtectedRoute allowedRoles={['manager', 'admin']}>
-                <ActionsManager />
-              </ProtectedRoute>
-            } />
-            
+            <Route path="/whatsapp" element={<WhatsAppHub />} />
+
             <Route path="/reports" element={
               <ProtectedRoute allowedRoles={['manager', 'admin']}>
-                <Reports />
+                <GestorReports />
               </ProtectedRoute>
             } />
             
@@ -241,7 +215,7 @@ function AppContent() {
             
             <Route path="/settings" element={
               <ProtectedRoute allowedRoles={['admin']}>
-                <SystemSettings />
+                <Settings />
               </ProtectedRoute>
             } />
             
