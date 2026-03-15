@@ -45,8 +45,8 @@ export default function TopBar() {
   const RoleIcon = roleInfo.icon
 
   return (
-    <header className="bg-white shadow-sm border-b border-gray-200">
-      <div className="flex items-center justify-between px-4 py-3">
+    <header className="bg-white shadow-sm border-b border-gray-200 h-14">
+      <div className="flex items-center justify-between px-4 h-full">
         {/* Mobile menu button */}
         <button
           onClick={() => setShowMobileMenu(!showMobileMenu)}
@@ -64,7 +64,7 @@ export default function TopBar() {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Buscar leads, visitas, matrículas..."
-              className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00D4C4] focus:border-transparent transition-all"
+              className="w-full pl-10 pr-4 py-1.5 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00D4C4] focus:border-transparent transition-all"
             />
           </div>
         </div>

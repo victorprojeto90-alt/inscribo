@@ -8,3 +8,7 @@
   --navy: #1e2d6b;
   --navy-dark: #151b4e;
 }
+
+html, body {
+  font-size: 14px;
+}

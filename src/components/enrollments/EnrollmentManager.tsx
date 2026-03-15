@@ -394,17 +394,17 @@ export default function EnrollmentManager() {
   }
 
   return (
-    <div className="p-8 bg-gradient-to-br from-purple-50 via-white to-blue-50 min-h-screen">
+    <div className="p-6 bg-gradient-to-br from-purple-50 via-white to-blue-50 min-h-screen">
       {/* Header */}
-      <div className="mb-8">
-        <div className="flex items-center justify-between mb-6">
+      <div className="mb-6">
+        <div className="flex items-center justify-between mb-4">
           <div>
-            <h1 className="text-4xl font-bold text-gray-900 mb-2">Gestão de Matrículas</h1>
-            <p className="text-gray-600 text-lg">Controle completo de matrículas e alunos</p>
+            <h1 className="text-xl font-bold text-gray-900">Gestão de Matrículas</h1>
+            <p className="text-xs text-gray-500 mt-0.5">Controle completo de matrículas e alunos</p>
           </div>
           <button
             onClick={() => setShowForm(true)}
-            className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-8 py-4 rounded-2xl hover:from-purple-700 hover:to-blue-700 transition-all flex items-center shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+            className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-5 py-2 rounded-xl hover:from-purple-700 hover:to-blue-700 transition-all flex items-center shadow-md hover:shadow-lg"
           >
             <Plus className="w-5 h-5 mr-2" />
             Nova Matrícula
@@ -412,12 +412,12 @@ export default function EnrollmentManager() {
         </div>
 
         {/* Stats Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-          <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-lg transition-all">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+          <div className="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 hover:shadow-lg transition-all">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm font-medium text-gray-600">Total de Matrículas</p>
-                <p className="text-3xl font-bold text-purple-600">{stats.total}</p>
+                <p className="text-xs font-medium text-gray-600">Total de Matrículas</p>
+                <p className="text-xl font-bold text-purple-600">{stats.total}</p>
                 <div className="flex items-center mt-2">
                   <TrendingUp className="h-4 w-4 text-green-500 mr-1" />
                   <span className="text-sm text-green-600">+{stats.monthlyGrowth.toFixed(1)}% este mês</span>
@@ -427,11 +427,11 @@ export default function EnrollmentManager() {
             </div>
           </div>
 
-          <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-lg transition-all">
+          <div className="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 hover:shadow-lg transition-all">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm font-medium text-gray-600">Receita Total</p>
-                <p className="text-3xl font-bold text-green-600">{formatCurrency(stats.totalValue)}</p>
+                <p className="text-xs font-medium text-gray-600">Receita Total</p>
+                <p className="text-xl font-bold text-green-600">{formatCurrency(stats.totalValue)}</p>
                 <div className="flex items-center mt-2">
                   <DollarSign className="h-4 w-4 text-green-500 mr-1" />
                   <span className="text-sm text-green-600">Acumulado</span>
@@ -441,11 +441,11 @@ export default function EnrollmentManager() {
             </div>
           </div>
 
-          <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-lg transition-all">
+          <div className="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 hover:shadow-lg transition-all">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm font-medium text-gray-600">Ticket Médio</p>
-                <p className="text-3xl font-bold text-blue-600">{formatCurrency(stats.averageValue)}</p>
+                <p className="text-xs font-medium text-gray-600">Ticket Médio</p>
+                <p className="text-xl font-bold text-blue-600">{formatCurrency(stats.averageValue)}</p>
                 <div className="flex items-center mt-2">
                   <BarChart3 className="h-4 w-4 text-blue-500 mr-1" />
                   <span className="text-sm text-blue-600">Por matrícula</span>
@@ -455,11 +455,11 @@ export default function EnrollmentManager() {
             </div>
           </div>
 
-          <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-lg transition-all">
+          <div className="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 hover:shadow-lg transition-all">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm font-medium text-gray-600">Este Mês</p>
-                <p className="text-3xl font-bold text-orange-600">{stats.thisMonthEnrollments}</p>
+                <p className="text-xs font-medium text-gray-600">Este Mês</p>
+                <p className="text-xl font-bold text-orange-600">{stats.thisMonthEnrollments}</p>
                 <div className="flex items-center mt-2">
                   <Calendar className="h-4 w-4 text-orange-500 mr-1" />
                   <span className="text-sm text-orange-600">Novas matrículas</span>
@@ -499,7 +499,7 @@ export default function EnrollmentManager() {
       </div>
 
       {/* Charts */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 mb-6">
         {/* Monthly Enrollments Chart */}
         <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
           <div className="flex items-center justify-between mb-6">
@@ -581,31 +581,31 @@ export default function EnrollmentManager() {
 
       {/* Enrollments Table */}
       <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
-        <div className="px-8 py-6 border-b border-gray-200 bg-gradient-to-r from-purple-50 to-blue-50">
-          <h2 className="text-2xl font-bold text-gray-900">Lista de Matrículas</h2>
-          <p className="text-gray-600 mt-1">Todas as matrículas registradas no sistema</p>
+        <div className="px-5 py-4 border-b border-gray-200 bg-gradient-to-r from-purple-50 to-blue-50">
+          <h2 className="text-base font-bold text-gray-900">Lista de Matrículas</h2>
+          <p className="text-xs text-gray-500 mt-0.5">Todas as matrículas registradas no sistema</p>
         </div>
 
         <div className="overflow-x-auto">
           <table className="w-full">
             <thead className="bg-gray-50">
               <tr>
-                <th className="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                <th className="px-4 py-2.5 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
                   Aluno
                 </th>
-                <th className="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                <th className="px-4 py-2.5 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
                   Série/Curso
                 </th>
-                <th className="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                <th className="px-4 py-2.5 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
                   Valor
                 </th>
-                <th className="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                <th className="px-4 py-2.5 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
                   Data
                 </th>
-                <th className="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                <th className="px-4 py-2.5 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
                   Origem
                 </th>
-                <th className="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                <th className="px-4 py-2.5 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
                   Ações
                 </th>
               </tr>
@@ -616,16 +616,16 @@ export default function EnrollmentManager() {
                 
                 return (
                   <tr key={enrollment.id} className="hover:bg-gray-50 transition-colors">
-                    <td className="px-6 py-4 whitespace-nowrap">
+                    <td className="px-4 py-2 whitespace-nowrap">
                       <div className="flex items-center">
-                        <div className="flex-shrink-0 h-10 w-10">
-                          <div className="h-10 w-10 rounded-full bg-gradient-to-br from-purple-500 to-blue-600 flex items-center justify-center">
-                            <span className="text-white font-bold text-sm">
+                        <div className="flex-shrink-0 h-8 w-8">
+                          <div className="h-8 w-8 rounded-full bg-gradient-to-br from-purple-500 to-blue-600 flex items-center justify-center">
+                            <span className="text-white font-bold text-xs">
                               {enrollment.student_name.charAt(0).toUpperCase()}
                             </span>
                           </div>
                         </div>
-                        <div className="ml-4">
+                        <div className="ml-3">
                           <div className="text-sm font-semibold text-gray-900">{enrollment.student_name}</div>
                           {relatedLead && (
                             <div className="text-xs text-gray-500">Lead: {relatedLead.responsible_name}</div>
@@ -633,17 +633,17 @@ export default function EnrollmentManager() {
                         </div>
                       </div>
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap">
+                    <td className="px-4 py-2 whitespace-nowrap">
                       <span className="inline-flex px-3 py-1 text-xs font-semibold rounded-full bg-blue-100 text-blue-800 border border-blue-200">
                         {enrollment.course_grade}
                       </span>
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap">
+                    <td className="px-4 py-2 whitespace-nowrap">
                       <span className="text-sm font-bold text-green-600">
                         {enrollment.enrollment_value ? formatCurrency(enrollment.enrollment_value) : '-'}
                       </span>
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap">
+                    <td className="px-4 py-2 whitespace-nowrap">
                       <div className="flex items-center">
                         <Calendar className="w-4 h-4 text-gray-400 mr-2" />
                         <span className="text-sm text-gray-900">
@@ -651,12 +651,12 @@ export default function EnrollmentManager() {
                         </span>
                       </div>
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap">
+                    <td className="px-4 py-2 whitespace-nowrap">
                       <span className="text-sm text-gray-600">
                         {relatedLead ? relatedLead.source : 'Matrícula Direta'}
                       </span>
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap">
+                    <td className="px-4 py-2 whitespace-nowrap">
                       <div className="flex items-center space-x-2">
                         <button
                           onClick={() => handleEdit(enrollment)}

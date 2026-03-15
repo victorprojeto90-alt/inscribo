@@ -40,11 +40,11 @@ function KPICard({ title, value, change, icon, iconBg, accentColor, onClick }: K
       {/* Accent bar */}
       <div className={`absolute top-0 left-0 right-0 h-[3px] ${accentColor}`} />
 
-      <div className="p-5 sm:p-6 pt-6">
+      <div className="p-4 pt-5">
         <div className="flex items-start justify-between">
           <div className="flex-1">
-            <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-3">{title}</p>
-            <p className="text-3xl sm:text-4xl font-bold text-[#1e2d6b] leading-none mb-3">{value}</p>
+            <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-2">{title}</p>
+            <p className="text-2xl font-bold text-[#1e2d6b] leading-none mb-2">{value}</p>
             {change !== undefined && (
               <div className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-semibold ${isPositive ? 'bg-green-50 text-green-700' : 'bg-red-50 text-red-700'}`}>
                 {isPositive
@@ -55,7 +55,7 @@ function KPICard({ title, value, change, icon, iconBg, accentColor, onClick }: K
               </div>
             )}
           </div>
-          <div className={`w-12 h-12 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center flex-shrink-0 ${iconBg}`}>
+          <div className={`w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 ${iconBg}`}>
             {icon}
           </div>
         </div>
@@ -236,13 +236,13 @@ export default function Dashboard() {
   // ── Loading state ───────────────────────────────────────────────────────────
   if (loading) {
     return (
-      <div className="p-4 sm:p-6 md:p-8 bg-gray-50 min-h-screen">
+      <div className="p-6 bg-gray-50 min-h-screen">
         <div className="animate-pulse space-y-6">
-          <div className="h-10 bg-gray-200 rounded-xl w-64 mb-2" />
-          <div className="h-5 bg-gray-100 rounded w-48" />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+          <div className="h-8 bg-gray-200 rounded-xl w-64 mb-2" />
+          <div className="h-4 bg-gray-100 rounded w-48" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {[1, 2, 3, 4, 5, 6].map(i => (
-              <div key={i} className="h-36 bg-gray-200 rounded-2xl" />
+              <div key={i} className="h-28 bg-gray-200 rounded-2xl" />
             ))}
           </div>
         </div>
@@ -253,7 +253,7 @@ export default function Dashboard() {
   // ── Error state ──────────────────────────────────────────────────────────────
   if (error) {
     return (
-      <div className="p-4 sm:p-6 md:p-8 bg-gray-50 min-h-screen flex items-center justify-center">
+      <div className="p-6 bg-gray-50 min-h-screen flex items-center justify-center">
         <div className="bg-white rounded-2xl p-8 shadow-sm border border-red-200 text-center max-w-md">
           <h2 className="text-xl font-bold text-gray-900 mb-3">Erro no Dashboard</h2>
           <p className="text-gray-600 mb-6">{error}</p>
@@ -345,15 +345,15 @@ export default function Dashboard() {
   ]
 
   return (
-    <div className="p-4 sm:p-6 md:p-8 bg-gray-50 min-h-screen">
+    <div className="p-6 bg-gray-50 min-h-screen">
 
       {/* ── Header ─────────────────────────────────────────────────────────── */}
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-8">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-6">
         <div>
-          <h1 className="text-2xl sm:text-3xl font-bold text-[#1e2d6b]">
+          <h1 className="text-xl font-bold text-[#1e2d6b]">
             Olá, {user?.full_name?.split(' ')[0] || 'Usuário'}!
           </h1>
-          <p className="text-gray-500 mt-1">Vamos matricular hoje!</p>
+          <p className="text-xs text-gray-500 mt-0.5">Vamos matricular hoje!</p>
         </div>
         <div className="inline-flex items-center gap-2 bg-white border border-gray-200 rounded-xl px-4 py-2 text-sm text-gray-600 shadow-sm self-start sm:self-auto capitalize">
           <Calendar className="w-4 h-4 text-[#14b8a6]" />
@@ -362,14 +362,14 @@ export default function Dashboard() {
       </div>
 
       {/* ── KPI Cards ──────────────────────────────────────────────────────── */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 mb-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
         {kpiCards.map((kpi, i) => (
           <KPICard key={i} {...kpi} />
         ))}
       </div>
 
       {/* ── Bottom row ─────────────────────────────────────────────────────── */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 sm:gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
 
         {/* Funil de Conversão */}
         <div className="lg:col-span-2 bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden">

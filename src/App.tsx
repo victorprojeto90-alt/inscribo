@@ -188,7 +188,7 @@ function AppContent() {
     <div className="min-h-screen bg-gray-50">
       <Sidebar />
       
-      <div className="lg:ml-64">
+      <div className="lg:ml-[220px]">
         <div className="lg:hidden h-16"></div>
         <TopBar />
         

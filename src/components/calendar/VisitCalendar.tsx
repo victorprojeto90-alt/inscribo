@@ -633,54 +633,54 @@ export default function VisitCalendar() {
   }
 
   return (
-    <div className="p-8 bg-gradient-to-br from-blue-50 via-white to-indigo-50 min-h-screen">
-      <div className="mb-8">
-        <div className="flex items-center justify-between mb-8">
+    <div className="p-6 bg-gradient-to-br from-blue-50 via-white to-indigo-50 min-h-screen">
+      <div className="mb-5">
+        <div className="flex items-center justify-between mb-5">
           <div>
-            <h1 className="text-4xl font-bold text-gray-900 mb-2 flex items-center">
-              <Calendar className="w-10 h-10 text-[#00D4C4] mr-4" />
+            <h1 className="text-xl font-bold text-gray-900 flex items-center">
+              <Calendar className="w-5 h-5 text-[#00D4C4] mr-2" />
               Calendário de Visitas
             </h1>
-            <p className="text-gray-600 text-lg">Gerencie e acompanhe todas as visitas agendadas</p>
+            <p className="text-xs text-gray-500 mt-0.5">Gerencie e acompanhe todas as visitas agendadas</p>
           </div>
         </div>
 
         {/* Stats Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-          <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-lg transition-all">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-5">
+          <div className="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 hover:shadow-lg transition-all">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm font-medium text-gray-600">Visitas Hoje</p>
-                <p className="text-3xl font-bold text-blue-600">{stats.todayVisits}</p>
+                <p className="text-xs font-medium text-gray-600">Visitas Hoje</p>
+                <p className="text-xl font-bold text-blue-600">{stats.todayVisits}</p>
               </div>
-              <Calendar className="h-8 w-8 text-blue-600" />
+              <Calendar className="h-6 w-6 text-blue-600" />
             </div>
           </div>
-          <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-lg transition-all">
+          <div className="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 hover:shadow-lg transition-all">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm font-medium text-gray-600">Esta Semana</p>
-                <p className="text-3xl font-bold text-green-600">{stats.weekVisits}</p>
+                <p className="text-xs font-medium text-gray-600">Esta Semana</p>
+                <p className="text-xl font-bold text-green-600">{stats.weekVisits}</p>
               </div>
-              <Clock className="h-8 w-8 text-green-600" />
+              <Clock className="h-6 w-6 text-green-600" />
             </div>
           </div>
-          <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-lg transition-all">
+          <div className="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 hover:shadow-lg transition-all">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm font-medium text-gray-600">Realizadas</p>
-                <p className="text-3xl font-bold text-purple-600">{stats.completedVisits}</p>
+                <p className="text-xs font-medium text-gray-600">Realizadas</p>
+                <p className="text-xl font-bold text-purple-600">{stats.completedVisits}</p>
               </div>
-              <Eye className="h-8 w-8 text-purple-600" />
+              <Eye className="h-6 w-6 text-purple-600" />
             </div>
           </div>
-          <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-lg transition-all">
+          <div className="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 hover:shadow-lg transition-all">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm font-medium text-gray-600">Agendadas</p>
-                <p className="text-3xl font-bold text-orange-600">{stats.scheduledVisits}</p>
+                <p className="text-xs font-medium text-gray-600">Agendadas</p>
+                <p className="text-xl font-bold text-orange-600">{stats.scheduledVisits}</p>
               </div>
-              <User className="h-8 w-8 text-orange-600" />
+              <User className="h-6 w-6 text-orange-600" />
             </div>
           </div>
         </div>
@@ -780,7 +780,7 @@ export default function VisitCalendar() {
                 return (
                   <div
                     key={index}
-                    className={`h-28 border-2 rounded-2xl p-3 transition-all hover:shadow-lg ${
+                    className={`h-24 border-2 rounded-xl p-2 transition-all hover:shadow-md ${
                       isToday 
                         ? 'bg-blue-50 border-blue-300' 
                         : 'bg-gray-50 border-gray-200 hover:bg-gray-100'
@@ -823,56 +823,43 @@ export default function VisitCalendar() {
             const statusVisits = getVisitsByStatus(status as Visit['status'])
             
             return (
-              <div key={status} className={`${config.bgColor} rounded-3xl p-6 min-h-96 ${config.borderColor} border-2 shadow-lg`}>
-                <div className="flex items-center justify-between mb-6">
+              <div key={status} className={`${config.bgColor} rounded-2xl p-4 min-h-64 ${config.borderColor} border-2 shadow-lg`}>
+                <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center">
-                    <div className={`w-4 h-4 rounded-full ${config.color} mr-3 shadow-sm`}></div>
-                    <h3 className={`font-bold text-lg ${config.textColor}`}>{config.label}</h3>
+                    <div className={`w-3 h-3 rounded-full ${config.color} mr-2 shadow-sm`}></div>
+                    <h3 className={`font-bold text-sm ${config.textColor}`}>{config.label}</h3>
                   </div>
-                  <span className={`${config.color} text-white text-sm px-4 py-1 rounded-full font-medium shadow-lg`}>
+                  <span className={`${config.color} text-white text-xs px-3 py-0.5 rounded-full font-medium shadow-md`}>
                     {statusVisits.length}
                   </span>
                 </div>
 
-                <div className="space-y-4">
+                <div className="space-y-2">
                   {statusVisits.map((visit) => (
                     <div
                       key={visit.id}
                       onClick={() => handleVisitClick(visit)}
-                      className="bg-white p-5 rounded-2xl shadow-sm border-2 border-gray-100 hover:shadow-lg transition-all cursor-pointer group"
+                      className="bg-white p-3 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all cursor-pointer group"
                     >
-                      <div className="flex justify-between items-start mb-4">
-                        <h4 className="font-semibold text-gray-900 text-sm group-hover:text-[#00D4C4] transition-colors">
-                          {visit.student_name || 'Visitante'}
-                        </h4>
-                      </div>
-
-                      <div className="space-y-2 mb-4">
-                        <p className="text-xs text-gray-600 flex items-center">
-                          <Calendar className="w-3 h-3 mr-1" />
-                          {formatDate(visit.scheduled_date)}
-                        </p>
-                        {visit.notes && (
-                          <p className="text-xs text-gray-600 line-clamp-2">
-                            {visit.notes}
-                          </p>
-                        )}
-                      </div>
-
-                      <div className="pt-3 border-t-2 border-gray-100">
-                        <span className={`text-xs px-3 py-1 rounded-full font-medium border-2 ${config.bgColor} ${config.textColor} ${config.borderColor}`}>
-                          {config.label}
-                        </span>
-                      </div>
+                      <h4 className="font-semibold text-gray-900 text-xs group-hover:text-[#00D4C4] transition-colors mb-1">
+                        {visit.student_name || 'Visitante'}
+                      </h4>
+                      <p className="text-xs text-gray-500 flex items-center">
+                        <Calendar className="w-3 h-3 mr-1" />
+                        {formatDate(visit.scheduled_date)}
+                      </p>
+                      {visit.notes && (
+                        <p className="text-xs text-gray-400 line-clamp-1 mt-1">{visit.notes}</p>
+                      )}
                     </div>
                   ))}
 
                   {statusVisits.length === 0 && (
-                    <div className="text-center py-12">
-                      <div className={`w-16 h-16 ${config.color} rounded-full flex items-center justify-center mx-auto mb-4 opacity-20 shadow-lg`}>
-                        <Calendar className="w-8 h-8 text-white" />
+                    <div className="text-center py-8">
+                      <div className={`w-10 h-10 ${config.color} rounded-full flex items-center justify-center mx-auto mb-2 opacity-20`}>
+                        <Calendar className="w-5 h-5 text-white" />
                       </div>
-                      <p className="text-sm text-gray-500 font-medium">Nenhuma visita neste status</p>
+                      <p className="text-xs text-gray-400">Nenhuma visita</p>
                     </div>
                   )}
                 </div>
